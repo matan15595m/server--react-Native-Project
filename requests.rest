@@ -1,0 +1,61 @@
+###
+
+GET http://localhost:3000/index
+
+###
+
+GET http://localhost:3000/post
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2EzZThkY2NhZWE4YWE2YjQzODU4YSIsImlhdCI6MTY2ODk1NTc5MiwiZXhwIjoxNjY4OTU5MzkyfQ.0WGUho2Qdyjd0VWKCEKDRXg3c8OV8g8ApB5DkklbSuI
+
+###
+
+GET http://localhost:3000/post?sender=123456
+
+###
+
+GET http://localhost:3000/post/635e7fdef26bac3499a8c109
+
+###
+
+GET http://localhost:3000/post/635e7fdef26bac3499a8c10
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2EzZThkY2NhZWE4YWE2YjQzODU4YSIsImlhdCI6MTY2ODk1NTc5MiwiZXhwIjoxNjY4OTU5MzkyfQ.0WGUho2Qdyjd0VWKCEKDRXg3c8OV8g8ApB5DkklbSuI
+
+###
+
+POST http://localhost:3000/post
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2EzZThkY2NhZWE4YWE2YjQzODU4YSIsImlhdCI6MTY2ODk1NTc5MiwiZXhwIjoxNjY4OTU5MzkyfQ.0WGUho2Qdyjd0VWKCEKDRXg3c8OV8g8ApB5DkklbSuI
+Content-Type: application/json
+
+{
+    "message": "this is my new message",
+    "sender":"123456"
+}
+
+###
+
+PUT http://localhost:3000/post/635e7fdef26bac3499a8c10
+Content-Type: application/json
+
+{
+    "message": "this is my new message",
+    "sender":"123456"
+}
+
+###
+
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "user2@gmail.com",
+    "password": "12345"
+}
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+{
+    "email": "user2@gmail.com",
+    "password": "12345"
+}
